@@ -1,81 +1,42 @@
 <template>
-
     <div id="add-blog">
-
-      <h2>Add a New Blog Post</h2>
-      
-        <form v-if="!submitted">
-        
-        <label>Blog Title:</label>
-        
-        <input type="text" v-model.lazy="blog.title" required />
-        
-        <label>Blog Content:</label>
-        
-        <textarea v-model.lazy.trim="blog.content"></textarea>
-        
-        <div id="checkboxes">
-        
-        <p>Blog Categories:</p>
-        
-        <label>Fiction</label>
-                
-        <input type="checkbox" value="Fiction" v-model="blog.categories" />
-                
-         <label>Non-Fiction</label>
-                
-         <input type="checkbox" value="Non-Fiction" v-model="blog.categories" />
-                
-         <label>Heroism And Valour</label>
-                
-         <input type="checkbox" value="HeroismValour" v-model="blog.categories" />
-                
-          <label>Love</label>
-          
-          <input type="checkbox" value="love" v-model="blog.categories" />
-            
-           </div>
-           
-           <label>Author:</label>
-           
-           <select v-model="blog.author">
-           
-           <option v-for="author in authors">{{ author }}</option>
-           
-           </select>
-           
-           <hr />
-           
-           <button v-on:click.prevent="post" class="button">Add Blog</button>
-        
-        </form>
-        
-        <div v-if="submitted">
-        
-        <h3>Thanks for adding your post</h3>
-        
-        </div>
-        
-        <div id="preview">
-        
-        <h3>Preview blog</h3>
-        
-        <p>Blog title: {{ blog.title }}</p>
-        
-        <p>Blog content:</p>
-        
-        <p style="white-space: pre">{{ blog.content }}</p>
-        
-        <p>Blog Categories:</p>
-        
-        <ul>
-        
-        <li v-for="category in blog.categories">{{ category }}</li>
-        
-        </ul>
-        
-        <p>Author: {{ blog.author }}</p>
-        
+      <h2>Add a New Blog Post</h2>     
+        <form v-if="!submitted">       
+        <label>Blog Title:</label>       
+        <input type="text" v-model.lazy="blog.title" required />       
+        <label>Blog Content:</label>      
+        <textarea v-model.lazy.trim="blog.content"></textarea>    
+        <div id="checkboxes">     
+        <p>Blog Categories:</p>      
+        <label>Fiction</label>              
+        <input type="checkbox" value="Fiction" v-model="blog.categories" />              
+         <label>Non-Fiction</label>               
+         <input type="checkbox" value="Non-Fiction" v-model="blog.categories" />               
+         <label>Heroism And Valour</label>                
+         <input type="checkbox" value="HeroismValour" v-model="blog.categories" />                
+          <label>Love</label>       
+          <input type="checkbox" value="love" v-model="blog.categories" />         
+           </div>       
+           <label>Author:</label>    
+           <select v-model="blog.author">    
+           <option v-for="author in authors">{{ author }}</option>    
+           </select>    
+           <hr />    
+           <button v-on:click.prevent="post" class="button">Add Blog</button>   
+        </form>   
+        <div v-if="submitted">  
+        <h3>Thanks for adding your post</h3>    
+        </div>     
+        <div id="preview">  
+        <h3>Preview blog</h3>     
+        <p>Blog title: {{ blog.title }}</p>     
+        <p>Blog content:</p>      
+        <p style="white-space: pre">{{ blog.content }}</p>     
+        <p>Blog Categories:</p>    
+        <ul>     
+        <li v-for="category in blog.categories">{{ category }}</li>    
+        </ul>   
+        <p>Author: {{ blog.author }}</p>       
         </div>
     
     </div>
@@ -111,7 +72,6 @@ export default {
     }
 }
 </script>
-
 <style scoped>
 #add-blog *{
     box-sizing: border-box;
@@ -158,7 +118,6 @@ h3{
   border-radius: 15px;
   box-shadow: 0 4px #999;
 }
-
 .button:hover {background-color: #3e8e41}
 
 .button:active {
